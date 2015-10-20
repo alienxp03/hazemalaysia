@@ -9,6 +9,21 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>EAIntroView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>EARestrictedScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JDStatusBarNotification.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +47,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>29822FC974AF738583A6285B24C05550</key>
+		<key>35FAFEC4CC2C2EBECEE1C9DCC300D424</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +57,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>529F5A7FC6E8AE0A8B730324D753B951</key>
+		<key>7F8A421DA95F59C55F811C0DD56E9571</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7096920A04497EA87F51A714E35B0A0D</key>
+		<key>A743024AB0866B60F1524ADEABC44696</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F9D6C7AEE16E64BBE3E62F48EB89C857</key>
+		<key>AB045440E0FF21FA9AA0E0A151C95FDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BBF0FB02669635AD20684186602CA62E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8BF146EAE696DCA97C90C51BE045947</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FFFFF7867379F217F2E256AF44E9A9AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

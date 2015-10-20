@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Introduction View Controller-->
+        <scene sceneID="rLH-xM-1be">
+            <objects>
+                <viewController storyboardIdentifier="IntroductionViewController" id="iMQ-iS-0tT" customClass="IntroductionViewController" customModule="HazeIndex" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lab-41-g7W"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vkn-VH-dbH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k4D-GA-Pfm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-wY-2Ih">
+                                <rect key="frame" x="20" y="548" width="560" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.70588235290000001" blue="0.93333333330000001" alpha="0.9165948276" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="51l-6h-d3Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Allow location access">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="allowAccess:" destination="iMQ-iS-0tT" eventType="touchUpInside" id="5rZ-uK-qHT"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="occ-b9-fiD">
+                                <rect key="frame" x="200" y="77" width="200" height="200"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1Iz-jc-Ild"/>
+                                    <constraint firstAttribute="width" constant="200" id="bOt-g2-E9y"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We need your location to display the haze status for your current location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRH-Dj-bCn">
+                                <rect key="frame" x="20" y="311" width="560" height="128"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="m7n-1N-keD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QRH-Dj-bCn" firstAttribute="top" secondItem="occ-b9-fiD" secondAttribute="bottom" constant="34" id="19B-J9-J55"/>
+                            <constraint firstItem="Vkn-VH-dbH" firstAttribute="top" secondItem="Rda-wY-2Ih" secondAttribute="bottom" constant="8" id="A4C-AI-As3"/>
+                            <constraint firstItem="QRH-Dj-bCn" firstAttribute="leading" secondItem="k4D-GA-Pfm" secondAttribute="leadingMargin" id="BDV-Yf-BOV"/>
+                            <constraint firstItem="QRH-Dj-bCn" firstAttribute="trailing" secondItem="k4D-GA-Pfm" secondAttribute="trailingMargin" id="DjG-zU-ikD"/>
+                            <constraint firstItem="occ-b9-fiD" firstAttribute="centerX" secondItem="k4D-GA-Pfm" secondAttribute="centerX" id="FB2-8r-PsB"/>
+                            <constraint firstItem="occ-b9-fiD" firstAttribute="top" secondItem="lab-41-g7W" secondAttribute="bottom" constant="57" id="N7T-Dk-K1b"/>
+                            <constraint firstItem="Rda-wY-2Ih" firstAttribute="leading" secondItem="k4D-GA-Pfm" secondAttribute="leadingMargin" id="WVH-Xo-E4Z"/>
+                            <constraint firstItem="Rda-wY-2Ih" firstAttribute="trailing" secondItem="k4D-GA-Pfm" secondAttribute="trailingMargin" id="obw-OA-VmJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qad-Zf-BhL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="277"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon" width="256" height="256"/>
+    </resources>
+</document>
