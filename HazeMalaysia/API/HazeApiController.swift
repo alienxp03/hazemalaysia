@@ -45,7 +45,9 @@ class HazeApiController : BaseApi {
                         let reading = [
                             "area" : result["lokasi"].stringValue,
                             "state" : result["negeri"].stringValue,
-                            "reading" : result["terkini"].stringValue
+                            "reading" : result["terkini"].stringValue,
+                            "latitude" : result["location"]["coordinates"]["latitude"].doubleValue,
+                            "longitude" : result["location"]["coordinates"]["longitude"].doubleValue
                         ]
                         readings.append(reading)
                     }

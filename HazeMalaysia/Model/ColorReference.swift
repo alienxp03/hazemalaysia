@@ -46,4 +46,19 @@ enum Status : String {
             return .redColor()
         }
     }
+    
+    var description: String {
+        switch self {
+        case Good:
+            return "Low pollution without any bad effect on health"
+        case Moderate:
+            return "Moderate pollution that does not pose any bad effect on health"
+        case Unhealthy:
+            return "Worsen the health condition of high risk people who is the people with heart and lung complications"
+        case VeryUnhealthy:
+            return "Worsen the health condition and low tolerance of physical exercises to people with heart and lung complications. Affect public health"
+        case Hazardous:
+            return "Hazardous to high risk people and public health"
+        }
+    }
 }

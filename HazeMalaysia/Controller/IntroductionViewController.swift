@@ -18,7 +18,11 @@ class IntroductionViewController: UIViewController {
     }
 
     @IBAction func allowAccess(sender: AnyObject) {
-        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+        }
     }
 }
 
@@ -33,13 +37,20 @@ extension IntroductionViewController : CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
         manager.stopUpdatingLocation()
+        location.coordinate.latitude
         
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {
             placemarks, errors in
-            guard let location = placemarks?.last?.locality else { return }
-
+            guard let town = placemarks?.last?.locality else { return }
+            
+            let userLocation: [String: AnyObject] = [
+                "town": town,
+                "latitude": location.coordinate.latitude,
+                "longitude": location.coordinate.longitude
+            ]
             Settings.firstLaunch = false
-            Settings.currentLocation = location
+            Settings.userLocation = userLocation
+
             let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
             UIApplication.sharedApplication().keyWindow?.rootViewController = viewController
         })

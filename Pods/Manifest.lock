@@ -1,17 +1,11 @@
 PODS:
   - Alamofire (3.0.1)
-  - EAIntroView (2.7.4):
-    - EARestrictedScrollView (~> 0.2.0)
-  - EARestrictedScrollView (0.2.0)
-  - JDStatusBarNotification (1.5.2)
   - SwiftDate (1.2)
   - SwiftyJSON (2.3.0)
   - SwiftyUserDefaults (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
-  - EAIntroView (~> 2.7.0)
-  - JDStatusBarNotification
   - SwiftDate
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - SwiftyUserDefaults
@@ -27,9 +21,6 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 2457e1b2e6c46bb05c3a598c542b7bfd08893775
-  EAIntroView: 50b85eedf414260e61330070ffe5947e72493a62
-  EARestrictedScrollView: f86d61e16c61d3e93c84f8e96e83122a2a3b7631
-  JDStatusBarNotification: a36d09ccbb047217572b074a61e7ca10dddc5f0a
   SwiftDate: 49ebd4efb5f82336cfc2b1d8a6622f47d4b17370
   SwiftyJSON: cacfe0373d584585716bd1d43202c24cc66afd65
   SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312

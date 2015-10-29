@@ -9,7 +9,6 @@
 import UIKit
 import SwiftyUserDefaults
 import SwiftDate
-import JDStatusBarNotification
 
 class Initializers: NSObject {
     static let apiController = HazeApiController()
@@ -26,11 +25,11 @@ class Initializers: NSObject {
         
         if Settings.lastUpdated == nil || ((NSDate() - Settings.lastUpdated) / 60) > 60 {
             if Settings.lastUpdated != nil {
-                JDStatusBarNotification.showWithStatus("Fetching latest status", dismissAfter: 2)
+//                JDStatusBarNotification.showWithStatus("Fetching latest status", dismissAfter: 2)
             }
             shouldUpdate = true
         } else {
-            JDStatusBarNotification.showWithStatus("All data in sync", dismissAfter: 2)
+//            JDStatusBarNotification.showWithStatus("All data in sync", dismissAfter: 2)
         }
         
         if shouldUpdate || Settings.readings.count < NSDate().hour {

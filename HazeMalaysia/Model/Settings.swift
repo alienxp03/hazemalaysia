@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyUserDefaults
+import CoreLocation
 
 //typealias Settings : Defaults
 class Settings {
@@ -29,12 +30,12 @@ class Settings {
         }
     }
     
-    static var currentLocation: String {
+    static var userLocation: [String: AnyObject] {
         set {
-            Defaults[.currentTown] = newValue
+            Defaults[.userLocation] = newValue
         }
         get {
-            return Defaults[.currentTown]
+            return Defaults[.userLocation]
         }
     }
     
@@ -58,12 +59,18 @@ class Settings {
     
     static var currentLocationReading: String {
         get {
-            var locationReading = "60"
-            let locations = readings.filter{ el in (el["area"] as! String).containsString(currentLocation) }
+            let userCoordinate = CLLocation(latitude: userLocation["latitude"] as! Double, longitude: userLocation["longitude"] as! Double)
             
-            if readings.count > 0 {
-                locationReading = (locations.sort({ ($0["reading"] as! String) > ($1["reading"] as! String) })
-                    .first as! NSDictionary)["reading"] as! String
+            var locationReading = "60"
+            var previousDistance = Double.infinity
+            for reading in readings {
+                let readingLocation = CLLocation(latitude: reading["latitude"] as! Double, longitude: reading["longitude"] as! Double)
+                
+                let distance = userCoordinate.distanceFromLocation(readingLocation)
+                if previousDistance > distance {
+                    previousDistance = distance
+                    locationReading = reading["reading"] as! String
+                }
             }
             
             return locationReading
@@ -77,7 +84,7 @@ class Settings {
 
 extension DefaultsKeys {
     static let firstLaunch = DefaultsKey<Bool?>("firstLaunch")
-    static let currentTown = DefaultsKey<String>("currentTown")
+    static let userLocation = DefaultsKey<[String: AnyObject]>("userLocation")
     static let areas = DefaultsKey<NSArray>("areas")
     static let readings = DefaultsKey<NSArray>("readings")
     static let lastUpdated = DefaultsKey<NSDate?>("lastUpdated")

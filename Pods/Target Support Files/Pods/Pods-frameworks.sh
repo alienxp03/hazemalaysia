@@ -85,18 +85,12 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Alamofire.framework"
-  install_framework "Pods/EAIntroView.framework"
-  install_framework "Pods/EARestrictedScrollView.framework"
-  install_framework "Pods/JDStatusBarNotification.framework"
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftyJSON.framework"
   install_framework "Pods/SwiftyUserDefaults.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Alamofire.framework"
-  install_framework "Pods/EAIntroView.framework"
-  install_framework "Pods/EARestrictedScrollView.framework"
-  install_framework "Pods/JDStatusBarNotification.framework"
   install_framework "Pods/SwiftDate.framework"
   install_framework "Pods/SwiftyJSON.framework"
   install_framework "Pods/SwiftyUserDefaults.framework"
