@@ -50,5 +50,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>9663b3ab801749959fb2adfe12c07c31ec491f69</string>
+	</dict>
 </dict>
 </plist>

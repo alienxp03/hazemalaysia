@@ -23,7 +23,7 @@ class CurrentLocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateView", name: "updateReading", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CurrentLocationViewController.updateView), name: "updateReading", object: nil)
         
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
@@ -41,7 +41,7 @@ class CurrentLocationViewController: UIViewController {
     // MARK: - Setup
     func updateView() {
         navigationItem.title = Settings.userLocation["town"] as? String
-        date.text = NSDate().toString(format: DateFormat.Custom("dd MMM"))
+        date.text = NSDate().toString(DateFormat.Custom("dd MMM"))
         reading.text = Settings.currentLocationReading
         
         navigationController?.navigationBar.barTintColor = HazeStatus.status(NSString(string: reading.text!).integerValue).color

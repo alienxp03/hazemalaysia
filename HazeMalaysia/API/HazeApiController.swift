@@ -52,7 +52,8 @@ class HazeApiController : BaseApi {
                         readings.append(reading)
                     }
                     
-                    guard let date = NSDate.date(fromString: json["last_updated"].stringValue, format: DateFormat.Custom("yyyy-MM-dd HH:mm:ss")) else { return }
+                    
+                    guard let date = json["last_updated"].stringValue.toDate(DateFormat.Custom("yyyy-MM-dd HH:mm:ss")) else { return }
 
                     if Settings.lastUpdated == nil || date < NSDate() {
                         Settings.lastUpdated = date

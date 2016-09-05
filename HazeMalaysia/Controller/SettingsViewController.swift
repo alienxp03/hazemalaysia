@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class SettingsViewController: UITableViewController {
 
@@ -27,6 +28,8 @@ class SettingsViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text == "Permission" {
             UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+        } else if tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text == "Send a review!" {
+            UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/app/id1050882175")!)
         }
     }
 }

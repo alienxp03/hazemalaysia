@@ -21,18 +21,18 @@ class Initializers: NSObject {
     }
     
     class func updateLatestReading() {
-        var shouldUpdate = false
+//        var shouldUpdate = false
+//        
+//        if Settings.lastUpdated == nil || ((NSDate.today() - Settings.lastUpdated) / 60) > 60 {
+//            if Settings.lastUpdated != nil {
+////                JDStatusBarNotification.showWithStatus("Fetching latest status", dismissAfter: 2)
+//            }
+//            shouldUpdate = true
+//        } else {
+////            JDStatusBarNotification.showWithStatus("All data in sync", dismissAfter: 2)
+//        }
         
-        if Settings.lastUpdated == nil || ((NSDate() - Settings.lastUpdated) / 60) > 60 {
-            if Settings.lastUpdated != nil {
-//                JDStatusBarNotification.showWithStatus("Fetching latest status", dismissAfter: 2)
-            }
-            shouldUpdate = true
-        } else {
-//            JDStatusBarNotification.showWithStatus("All data in sync", dismissAfter: 2)
-        }
-        
-        if shouldUpdate || Settings.readings.count < NSDate().hour {
+        if Settings.readings.count < NSDate().hour {
             apiController.getLatestReading {
                 result in
                 Settings.readings = result

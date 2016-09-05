@@ -22,7 +22,7 @@ class PlacesViewController: UIViewController {
         
         navigationController?.navigationBar.barStyle = UIBarStyle.Black
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateReading", name: "updateReading", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlacesViewController.updateReading), name: "updateReading", object: nil)
         
         tableView.registerNib(UINib(nibName: "StatisticCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
