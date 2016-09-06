@@ -27,7 +27,13 @@ class StatisticTableViewCell: UITableViewCell {
         circleLayer.path = UIBezierPath(ovalInRect: CGRect(x: 0, y: 0, width: reading.frame.width, height: reading.frame.height)).CGPath
         circleLayer.fillColor = UIColor.clearColor().CGColor
         //        circleLayer.fillColor = HazeStatus.status(Int(reading.text!)!).color.CGColor
-        circleLayer.strokeColor = HazeStatus.status(Int(reading.text!)!).color.CGColor
+        var status = reading.text!
+        
+        if status == "" {
+            status = "0"
+            reading.text = "-"
+        }
+        circleLayer.strokeColor = HazeStatus.status(Int(status)!).color.CGColor
         circleLayer.lineWidth = 2
         reading.layer.addSublayer(circleLayer)
     }

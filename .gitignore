@@ -24,6 +24,7 @@ xcuserdata
 *.xcscmblueprint
 *.mobileprovision
 *.zip
+*.cer
 
 ## Obj-C/Swift specific
 *.hmap
